@@ -4,5 +4,4 @@ CC = gcc
 
 all: mini-printf.o
 
-clean:
-	$(RM) *.o
+include ../../general.mk
