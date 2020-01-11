@@ -7,6 +7,7 @@ LDFLAGS += -static -ffreestanding -nostartfiles
 all: program
 
 # You can use unistd.h, system call wrapper
+## if you specify entrypoint, append `-e _main`
 program: main.o
 	$(CC) \
 	$(LDFLAGS) \
