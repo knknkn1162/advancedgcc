@@ -8,7 +8,7 @@ docker run -it -v $(pwd):/home/me -w /home/me --rm gcc
 make
 ```
 
-If you want to erase this, 
+If you want to erase this, `make clean`.
 
 # general
 
@@ -44,3 +44,7 @@ To avoid this, write `.PHONY compile_switch` and you can fully compile this.
 ## misc
 
 + If docker container is freezed, type Ctrl-C. 
+
+# detailed.
+
+For detailed information on each directory, check README.md in the directory.
