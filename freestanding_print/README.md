@@ -1,0 +1,1 @@
++ When [freestanding](https://ja.wikipedia.org/wiki/%E3%83%95%E3%83%AA%E3%83%BC%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E7%92%B0%E5%A2%83) environment, you have to implement printf by hand. We use [mludvig/mini-printf](https://github.com/mludvig/mini-printf) to print "hello $(name)`.
