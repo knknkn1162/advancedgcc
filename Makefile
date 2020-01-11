@@ -1,30 +1,29 @@
-PROGRAM_DIRS = compile_switch freestanding_print
+SUBDIRS = ar\
+		  compile_switch\
+		  error_directive\
+		  freestanding_print\
+		  linker_script\
+		  stringizing_operator
 
-.PHONY: all clean run $(PROGRAM_DIRS)
+.PHONY: all clean run $(SUBDIRS)
 
-build: clean $(PROGRAM_DIRS)
+all: clean build
 
-compile_switch:
-	make -C compile_switch
-freestanding_print:
-	make -C freestanding_print
+build:
+	$(foreach dir, $(SUBDIRS), \
+	  echo "+ build $(dir)";\
+	  make -C $(dir);\
+	)
 
 run: build
-	echo "+ run all programs:"
-	echo "+ compile_switch, error_directive"
-	make run -C compile_switch
-	make run -C error_directive
-	echo "+ # macro"
-	make run -C stringizing_operator
-	echo "+ using archive library"
-	make run -C ar
-	echo "+ freestanding_print:"
-	make run -C freestanding_print
+	$(foreach dir, $(SUBDIRS), \
+	  echo "+ run $(dir)";\
+	  make -C $(dir) run;\
+	)
 
 clean:
 	$(RM) *.o *.a
-	make clean -C compile_switch
-	make clean -C freestanding_print
-	make clean -C error_directive
-	make run -C stringizing_operator
-	make run -C ar
+	$(foreach dir, $(SUBDIRS), \
+	  echo "+ clean $(dir)";\
+	  make -C $(dir) clean;\
+	)
