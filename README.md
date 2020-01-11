@@ -1,5 +1,7 @@
 # AdvanceGCC
 
+This is the collection of confusing but common tips in C-lang, `gcc`, `make` and `ld`.
+
 # Preparations && Build
 
 ```sh
@@ -19,6 +21,7 @@ If you want to erase this, `make clean`.
 
 ### Reference
 
++ https://qiita.com/knknkn1162/items/c67ae7c2ef71a713adf8 : How to use `readelf`, `hexdump` and `ld`
 + https://ftp.gnu.org/old-gnu/Manuals/make-3.79.1/html_chapter/make_10.html : implicit rule(official)
 + https://goth-wrist-cut.hatenadiary.org/entry/20080317/1205769293 : examples of `patsubst`, `foreach` and `shell`
 
