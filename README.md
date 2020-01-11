@@ -16,13 +16,17 @@ If you want to erase this, `make clean`.
 
 ### Implicit rule
 
-+ `$(CC) -c $(CPPFLAGS) $(CFLAGS)` in C
+For more details, see [the link](https://ftp.gnu.org/old-gnu/Manuals/make-3.79.1/html_chapter/make_10.html):
 
-+ `$(CXX) -c $(CPPFLAGS) $(CXXFLAGS)` in C++
++ `$(CC) -c $(CPPFLAGS) $(CFLAGS)` in C -> object file
+
++ `$(CXX) -c $(CPPFLAGS) $(CXXFLAGS)` in C++ -> object file
+
++ `$(CC) $(LDFLAGS) $(TARGET_ARCH) $^ $(LOADLIBES) -o $@` in C -> exec file
 
 + `$(AS) $(ASFLAGS)` in asm
 
-Note) $(LD) has no implicit rule!
++ `$(CC) $(LDFLAGS) $^ $(LOADLIBES) $(LDLIBS) -o $@` in linker. see `ar` directory.
 
 ### PHONY
 

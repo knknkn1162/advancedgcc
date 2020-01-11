@@ -9,4 +9,4 @@ run:
 
 clean:
 	-make -C $(SUBDIR) clean
-	$(RM) program *.o
+	$(RM) program *.o *.a

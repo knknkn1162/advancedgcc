@@ -16,6 +16,8 @@ run: build
 	make run -C error_directive
 	echo "+ # macro"
 	make run -C stringizing_operator
+	echo "+ using archive library"
+	make run -C ar
 	echo "+ freestanding_print:"
 	make run -C freestanding_print
 
@@ -24,3 +26,5 @@ clean:
 	make clean -C compile_switch
 	make clean -C freestanding_print
 	make clean -C error_directive
+	make run -C stringizing_operator
+	make run -C ar
