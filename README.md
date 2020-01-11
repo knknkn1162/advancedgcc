@@ -1,20 +1,28 @@
 # AdvanceGCC
 
-# preparations && build
+# Preparations && Build
 
 ```sh
+# version: 9.2.0
 docker run -it -v $(pwd):/home/me -w /home/me --rm gcc
 # inside docker
 make
+# When you run all sample programs..
+make run
 ```
 
 If you want to erase this, `make clean`.
 
-# general
+# General
 
 ## Makefile
 
-### Implicit rule
+### Reference
+
++ https://ftp.gnu.org/old-gnu/Manuals/make-3.79.1/html_chapter/make_10.html : implicit rule(official)
++ https://goth-wrist-cut.hatenadiary.org/entry/20080317/1205769293 : examples of `patsubst`, `foreach` and `shell`
+
+### Implicit rules
 
 For more details, see [the link](https://ftp.gnu.org/old-gnu/Manuals/make-3.79.1/html_chapter/make_10.html):
 
@@ -30,7 +38,7 @@ For more details, see [the link](https://ftp.gnu.org/old-gnu/Manuals/make-3.79.1
 
 ### PHONY
 
-```
+```make
 # Makefile
 compile_switch:
 	make -C compile_switch
@@ -45,10 +53,10 @@ This is because `compile_switch` directory has been already created before `make
 
 To avoid this, write `.PHONY compile_switch` and you can fully compile this.
 
-## misc
+## Misc
 
-+ If docker container is freezed, type Ctrl-C. 
++ If docker container was freezed, type Ctrl-C.
 
-# detailed.
+# Each Topic
 
-For detailed information on each directory, check README.md in the directory.
+For detailed information on each directory, check dir/README.md.
