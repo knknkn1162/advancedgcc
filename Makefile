@@ -4,7 +4,8 @@ SUBDIRS = ar\
 		  freestanding_print\
 		  linker_script\
 		  stringizing_operator\
-		  constructor
+		  constructor\
+		  initfini
 
 .PHONY: all clean run $(SUBDIRS)
 
