@@ -1,6 +1,7 @@
 #include <stddef.h>
 #include <unistd.h>
 
+// weak symbol initializes 0 if the definition doesn't exist.
 extern void (*__init_array_start []) (void) __attribute__((weak));
 extern void (*__init_array_end []) (void) __attribute__((weak));
 extern void (*__fini_array_start []) (void) __attribute__((weak));
