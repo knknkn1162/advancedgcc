@@ -5,7 +5,7 @@ long int syscall (long int __sysno, ...);
 #include <unistd.h>
 #endif
 
-#include <sys/syscall.h>
+#include <sys/syscall.h> // SYS_write, SYS_exit
 
 void _start(void) {
   const char msg[] = "Hello world!\n";

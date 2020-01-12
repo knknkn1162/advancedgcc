@@ -19,3 +19,5 @@
   40108e:	48 83 c8 ff          	or     $0xffffffffffffffff,%rax
   401092:	c3                   	retq
 ```
+
+TODO: where is syscall.s? What is the relation between `write(2)` and `syscall(2)`?
