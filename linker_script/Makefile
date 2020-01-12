@@ -1,5 +1,7 @@
 CC = x86_64-linux-gnu-gcc
-CFLAGS += -DDEBUG -I./tools
+NUM = 0
+CFLAGS += -DNUMBER=$(NUM)
+CFLAGS += -I./tools
 LDFLAGS += -static -ffreestanding -nostartfiles
 
 .PHONY: all clean
