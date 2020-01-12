@@ -37,7 +37,7 @@ For more details, see [the link](https://ftp.gnu.org/old-gnu/Manuals/make-3.79.1
 
 + `$(AS) $(ASFLAGS)` in asm
 
-+ `$(CC) $(LDFLAGS) $^ $(LOADLIBES) $(LDLIBS) -o $@` in linker. see `ar` directory.
++ `$(CC) $(LDFLAGS) $^ $(LOADLIBES) $(LDLIBS) -o $@` in linker. The `ar` directory uses implicit rule on link
 
 ### PHONY
 

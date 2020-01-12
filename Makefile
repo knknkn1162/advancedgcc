@@ -3,7 +3,8 @@ SUBDIRS = ar\
 		  error_directive\
 		  freestanding_print\
 		  linker_script\
-		  stringizing_operator
+		  stringizing_operator\
+		  constructor
 
 .PHONY: all clean run $(SUBDIRS)
 
