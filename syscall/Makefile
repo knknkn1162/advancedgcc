@@ -1,10 +1,20 @@
 CC = gcc
-LDFLAGS = -static -ffreestanding -nostartfiles # -nostdlib -fno-builtin
+LDFLAGS = -static
+
+NOSTDLIB=0
+OBJS = program.o
+ifeq ($(NOSTDLIB), 0)
+  LDFLAGS += -ffreestanding -nostartfiles
+else
+  CFLAGS += -DNOSTDLIB
+  LDFLAGS += -nostdlib -fno-builtin
+  OBJS += syscall.o
+endif
 
 .PHONY: all
 
 all: program
 
-program: program.o
+program: $(OBJS)
 
 include ../general.mk
