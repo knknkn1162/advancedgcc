@@ -2,7 +2,7 @@
 #include <stdint.h>
 #include <stdio.h>
 
-static uint64_t rdtsc(void)
+static inline uint64_t rdtsc(void)
 {
 	unsigned int low, high;
 
