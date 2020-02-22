@@ -8,8 +8,12 @@ int test1(int a) {
   return b;
 }
 
+static char sample[] = "sample\n";
+
 int ENTRY _start(int argc, char* argv[]) {
-  const char str[] = "test\n";
+  const char str[] = "testtest\n";
   write(STDOUT_FILENO, str, sizeof(str));
-  return test1(5);
+  // TODO: this str does not print!
+  write(STDOUT_FILENO, sample, sizeof(sample));
+  return 0;
 }

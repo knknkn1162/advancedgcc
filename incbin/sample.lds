@@ -4,20 +4,9 @@ ENTRY(_start)
 
 SECTIONS
 {
-  /* SIZEOF_HEADERS = (elf header) + (program header) */
-  /* 0x08048000 in 32 bit machine and 0x00400000 in 64 bit machine) */
-  . = 0x400000 + SIZEOF_HEADERS;
+  . = 0x1000;
   .text : {
     *(.text.init)
     *(.text)
-  }
-  .rodata : {
-    *(.rodata)
-  }
-  .data : {
-    *(.data)
-  }
-  .bss : {
-    *(.bss)
   }
 }

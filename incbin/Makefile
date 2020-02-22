@@ -1,13 +1,16 @@
 TOOLPREFIX=x86_64-linux-gnu-
 CC = $(TOOLPREFIX)gcc
+AR = $(TOOLPREFIX)ar
 LD = $(TOOLPREFIX)ld
 OBJCOPY = $(TOOLPREFIX)objcopy
+
+ARFLAGS = rcv
 
 PAYLOAD_SRC = sample.c
 PAYLOAD_BIN = $(patsubst %.c,%, $(PAYLOAD_SRC))
 PAYLOAD_OBJ = $(patsubst %.c,%.o, $(PAYLOAD_SRC))
 PAYLOAD = $(PAYLOAD_BIN)_payload
-OBJS= payload.o
+OBJ= payload.o
 
 CLEAN_FILES = $(PAYLOAD) $(PAYLOAD_BIN)
 
@@ -19,17 +22,18 @@ ASFLAGS += $(CFLAGS)
 
 all: program
 
-program: $(OBJS)
+program: $(OBJ)
 
-payload.o: $(PAYLOAD)
+$(OBJ): $(PAYLOAD)
 
 $(PAYLOAD_BIN): $(PAYLOAD_OBJ)
 	$(CC) \
 	-static \
-	-T sample.lds \
 	-nostartfiles \
 	-o $@ \
-	$^
+	$^ \
+	-Wl,-T sample.lds
+
 
 $(PAYLOAD): $(PAYLOAD_BIN)
 	$(OBJCOPY) -O binary $^ $@

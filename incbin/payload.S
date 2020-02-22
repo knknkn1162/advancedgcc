@@ -2,4 +2,3 @@
 _payload_start:
   .incbin PAYLOAD
 _payload_end:
-
