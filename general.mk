@@ -1,12 +1,10 @@
 # you should prepare SUBDIR
-ifndef SUBDIR
-  SUBDIR=dummy
-endif
-
 .PHONY: run clean
 run:
 	./program
 
 clean:
+ifdef SUBDIR
 	-make -C $(SUBDIR) clean
-	$(RM) program *.o *.a
+endif
+	$(RM) program *.o *.a $(CLEAN_FILES)

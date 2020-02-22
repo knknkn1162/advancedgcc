@@ -6,7 +6,8 @@ SUBDIRS = ar\
 		  stringizing_operator\
 		  constructor\
 		  initfini\
-		  syscall
+		  syscall\
+		  incbin
 
 .PHONY: all clean run $(SUBDIRS)
 
