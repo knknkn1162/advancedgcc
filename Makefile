@@ -1,4 +1,5 @@
 SUBDIRS = ar\
+		  stdin_compile\
 		  compile_switch\
 		  error_directive\
 		  freestanding_print\
