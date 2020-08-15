@@ -68,7 +68,3 @@ To avoid this, write `.PHONY compile_switch` and you can fully compile this.
 ## Misc
 
 + If docker container was freezed, type Ctrl-C.
-
-# Each Topic
-
-For detailed information on each directory, check dir/README.md.
