@@ -1,4 +1,6 @@
-SUBDIRS = ar\
+SUBDIRS = printf_format\
+		  abi\
+		  libs\
 		  stdin_compile\
 		  compile_switch\
 		  error_directive\
